@@ -1,0 +1,9 @@
+# Allow all crawlers full access except to admin/API routes
+User-agent: *
+Disallow: /admin/
+Disallow: /login
+Disallow: /api/
+Allow: /
+
+# Point to your sitemap
+Sitemap: https://www.damodor.com/sitemap.xml
