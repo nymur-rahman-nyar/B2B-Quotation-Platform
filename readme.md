@@ -1,6 +1,6 @@
 # Web Quote App – Secure B2B Quotation Platform
 
-(Note this website is still in production and backend is hosted on Render free tier plan. The back end will start after 20 so please be patient ) 
+(Note this website is still in production and backend is hosted on Render free tier plan. The back end will start after 20 seconds so please be patient ) 
 
 A secure full-stack web application that enables businesses to generate, manage, and send quotations while enforcing strong access control and backend security practices.
 
