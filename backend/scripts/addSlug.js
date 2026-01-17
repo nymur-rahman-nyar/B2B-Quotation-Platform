@@ -17,7 +17,7 @@ async function run() {
   try {
     // 1) Connect (use whatever DB_URL your app already uses)
     await mongoose.connect(process.env.DB_URL);
-    console.log("✅ Connected to DB:", mongoose.connection.db.databaseName);
+    console.log("Connected to DB:", mongoose.connection.db.databaseName);
 
     // 2) Find products missing slug
     const products = await Product.find({
