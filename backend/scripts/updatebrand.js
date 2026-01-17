@@ -11,7 +11,7 @@ async function main() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  console.log("🔌 Connected to MongoDB");
+  console.log("Connected to MongoDB");
 
   // 2) update all products where brand is exactly "Mr. Mckenic"
   const result = await Product.updateMany(
@@ -20,15 +20,15 @@ async function main() {
   );
 
   console.log(
-    `📝 Matched ${result.matchedCount} document(s), modified ${result.modifiedCount} document(s)`
+    `Matched ${result.matchedCount} document(s), modified ${result.modifiedCount} document(s)`
   );
 
   // 3) disconnect
   await mongoose.disconnect();
-  console.log("✅ Disconnected");
+  console.log(" Disconnected");
 }
 
 main().catch((err) => {
-  console.error("❌ Error:", err);
+  console.error("Error:", err);
   process.exit(1);
 });
