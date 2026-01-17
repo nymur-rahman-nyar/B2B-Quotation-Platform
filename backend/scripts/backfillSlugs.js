@@ -31,7 +31,7 @@ async function main() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  console.log("🔌 Connected to MongoDB");
+  console.log("Connected to MongoDB");
 
   const products = await Product.find({
     $or: [{ slug: { $exists: false } }, { slug: "" }],
@@ -44,7 +44,7 @@ async function main() {
     console.log(` • ${p.name} → ${newSlug}`);
   }
 
-  console.log("✅ All done!");
+  console.log("All done!");
   await mongoose.disconnect();
 }
 
