@@ -23,7 +23,7 @@ async function run() {
     const products = await Product.find({
       $or: [{ slug: { $exists: false } }, { slug: "" }, { slug: null }],
     });
-    console.log(`🔍 Found ${products.length} products without a slug.`);
+    console.log(`Found ${products.length} products without a slug.`);
 
     // 3) For each, generate & save
     for (let p of products) {
@@ -47,12 +47,12 @@ async function run() {
       }
     }
 
-    console.log("🎉 Slug migration complete!");
+    console.log("Slug migration complete!");
   } catch (err) {
-    console.error("❌ Migration error:", err);
+    console.error("Migration error:", err);
   } finally {
     await mongoose.disconnect();
-    console.log("⚡️ Disconnected");
+    console.log(" Disconnected");
     process.exit(0);
   }
 }
