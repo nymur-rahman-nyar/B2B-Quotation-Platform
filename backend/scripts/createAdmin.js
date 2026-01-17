@@ -10,7 +10,7 @@ async function run() {
   try {
     // 1) Connect via Mongoose — explicitly target damodordb
     await mongoose.connect(process.env.DB_URL, { dbName: "test" });
-    console.log("✅ Connected to DB:", mongoose.connection.db.databaseName);
+    console.log("Connected to DB:", mongoose.connection.db.databaseName);
 
     // 2) Pull in your desired creds (falling back to defaults)
     const username = process.env.ADMIN_USERNAME || "admin";
@@ -23,17 +23,17 @@ async function run() {
 
     // 4) Create the admin
     const admin = await Admin.create({ username, passwordHash, email });
-    console.log("🆕 Created admin:", {
+    console.log("Created admin:", {
       _id: admin._id,
       username: admin.username,
       email: admin.email,
     });
   } catch (err) {
-    console.error("❌ Error:", err);
+    console.error(" Error:", err);
   } finally {
     // 5) Disconnect
     await mongoose.disconnect();
-    console.log("⚡️ Disconnected");
+    console.log(" Disconnected");
     process.exit(0);
   }
 }
